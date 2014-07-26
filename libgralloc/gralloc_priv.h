@@ -30,7 +30,9 @@
 
 #include <cutils/log.h>
 
+#ifndef NO_COMPAT_GRALLOC_PERFORM
 #define COMPAT_GRALLOC_PERFORM
+#endif
 
 #define ROUND_UP_PAGESIZE(x) ( (((unsigned long)(x)) + PAGE_SIZE-1)  & \
                                (~(PAGE_SIZE-1)) )
@@ -300,3 +302,5 @@ struct private_handle_t : public native_handle {
     };
 
 #endif /* GRALLOC_PRIV_H_ */
+
+
